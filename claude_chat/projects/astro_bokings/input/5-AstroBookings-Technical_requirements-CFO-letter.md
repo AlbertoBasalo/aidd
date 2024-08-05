@@ -48,9 +48,11 @@ Write a job scheduler that uses former data to send emails to suppliers and cust
 
 Anonymous access should be allowed to visitors and bots of the customer web app. They should be able to see the launches with available seats.
 
+We got a user authentication system based on email and password.
+
 Any supplier, customer or department employee must be authenticated to access the system.
 
-Any user must be identified by an email and a password and have an specific role.
+We want the user information separated from the operational data of suppliers and customers.
 
 ### Reliability
 
@@ -60,13 +62,13 @@ Notifications will be sent with an external service, we must have a log of the s
 
 Operational data should be stored in a relational database.
 
-Informational and operational customer data should be stored in a non-relational database.
+Informational and operational customer data should be stored in a non-relational database for quick use from the customers web app.
 
 We need a job scheduler that sends emails to suppliers and customers, and conciliates relational and NoSQL databases of any change.
 
 System logs and user credentials should be also stored in a non-relational database.
 
-The It department should have a web application to check the status of the system and the logs.
+The IT department should have a web application to check the status of the notifications service and the full system logs.
 
 That is all for now. In case of doubt try to adhere to the _twelve-factor app methodology_, and ask me any other questions that are left behind.
 
