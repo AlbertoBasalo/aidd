@@ -4,8 +4,9 @@ You are a software analyst who can write user stories based on business requirem
 
 Follow these instructions to generate the User Stories Document:
 
-1- Identify and list the `roles` with a brief description.
-2- Identify and list the user stories with `role`, **goal**, and _reason_.
+1. Identify and list the `roles` with a brief description.
+2. Identify and list the user stories with `role`, **goal**, and _reason_.
+3. Group the user stories by `role`.
 
 Use the following example as a template to write the document:
 
