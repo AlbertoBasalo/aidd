@@ -48,11 +48,11 @@ Write a job scheduler that uses former data to send emails to suppliers and cust
 
 Anonymous access should be allowed to visitors and bots of the customer web app. They should be able to see the launches with available seats.
 
-We got a user authentication system based on email and password.
+We need a user authentication system based on email and password.
 
 Any supplier, customer or department employee must be authenticated to access the system.
 
-We want the user information separated from the operational data of suppliers and customers.
+We want the user identification information separated from the operational data of suppliers and customers.
 
 ### Reliability
 

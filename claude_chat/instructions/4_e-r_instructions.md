@@ -47,6 +47,16 @@ Use the following example as a template to write the document:
 
 > Timestamp: DD/MM/YYYY HH:MM
 
+## Entities
+
+### 1. EntityName1
+
+Description
+
+### 2. EntityName2
+
+Description
+
 ## Relationships
 
 ### 1. EntityName1 (1 to 0 or 1) EntityName2
