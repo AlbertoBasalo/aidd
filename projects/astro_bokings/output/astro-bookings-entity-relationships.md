@@ -79,7 +79,7 @@ A message sent to users about various events in the system.
 - `Launch` _has_ `Booking`
 - `Booking` _is for_ `Launch`
 
-### 6. Customer (1 to 0 or many) Booking
+### 6. Customer _(1 to 0 or many)_ Booking
 
 - `Customer` _makes_ `Booking`
 - `Booking` _is made by_ `Customer`

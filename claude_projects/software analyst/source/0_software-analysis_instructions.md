@@ -16,6 +16,7 @@ The suggested order of document genearion and their instructions is as follows:
   3. 3_e-r_instructions.md
   4. 4_scenarios_instructions.md
   5. 5_domain-model_instructions.md
+  6. 6_database-schema_instructions.md
 
 ## Steps
 
