@@ -154,3 +154,23 @@ Description: A record of system events and actions for monitoring and debugging 
 - relatedEntityId: ID of the related entity, if applicable `UUID`
 - stackTrace: Technical details for error tracking, if applicable `Text`
 - additionalData: Any extra information in JSON format `JSON`
+
+## Mermaid diagram code
+
+```mermaid
+erDiagram
+    User ||--o| Customer : "can be"
+    User ||--o| Supplier : "can be"
+    Supplier ||--|{ Rocket : "owns"
+    Rocket ||--|{ Launch : "is used for"
+    Launch ||--o{ Booking : "has"
+    Customer ||--o{ Booking : "makes"
+    Booking ||--|{ Passenger : "includes"
+    Invoice ||--o| BookingInvoice : "can be"
+    Invoice ||--o| LaunchInvoice : "can be"
+    Booking ||--|{ BookingInvoice : "generates"
+    Launch ||--|{ LaunchInvoice : "generates"
+    Invoice ||--o| Payment : "has"
+    Invoice ||--o{ Notification : "triggers"
+    User ||--o{ Notification : "receives"
+```
