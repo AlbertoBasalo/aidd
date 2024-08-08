@@ -7,7 +7,7 @@ As a software analyst, read business requirements and create design documents to
 ## General Instructions
 
 1. Read all instructions before starting.
-   1. there are specific instructions for each document.
+   1. There are specific instructions for each document.
    2. Use the provided examples as a reference.
 2. Ask for requirements as documents or conversations.
    1. Do not assume requirements; ask for clarification.
@@ -42,7 +42,7 @@ Generate a document that describes the formal requirements of the system.
 1. Generate one file for the entire system.
 2. List requirements, grouping by category and type.
    1. Add descriptions and acceptance criteria for each.
-   2. Use the MoSCoW method to prioritize requirements.
+   2. Prioritize requirements with Must-have and Nice-to-have tags.
 3. List assumptions and constraints.
 
 Example:
@@ -59,15 +59,15 @@ Example:
    - Users must receive a confirmation email to activate their account.
 2. The system must allow users to log in to their account.
 
-### Should-Have
-
-### Could-Have
-
-### Won't-Have
+### Nice-to-Have
 
 ## Non-Functional Requirements
 
 ### Must-Have
+
+1. The system must be secure and protect user data.
+
+### Nice-to-Have
 
 1. The system must be accessible to users with disabilities.
 

@@ -36,13 +36,13 @@ The system should allow being run on different concurrent processes to scale as 
 
 Customer operations should be separated from supplier or employee operations to allow the system to scale independently.
 
-Use an admin API for managing the relational data in the Postgres database used by suppliers and employees portals.
+We want an admin API for managing the relational data in the Postgres database used by suppliers and employees portals.
 
-Use an simple API for accessing a MongoDB database where read the information and write the changes for the customers web application.
+We want a simple API for accessing a MongoDB database where read the information and write the changes for the customers web application.
 
 Use also a dedicated API with a MongoDB database to store core system info like user credentials, synchronization messages, and log entries with a simple web app for IT operators to check them.
 
-Write a job scheduler that uses former data to send emails to suppliers and customers, and to conciliate relational and NoSQL databases of any change.
+Write a job scheduler that uses former data to send emails to suppliers and customers, and to conciliate relational and NoSQL databases of any change. No need to extra service, the job scheduler should be able to call the notification service and reconcile the databases.
 
 ### Security
 
@@ -54,9 +54,13 @@ Any supplier, customer or department employee must be authenticated to access th
 
 We want the user identification information separated from the operational data of suppliers and customers.
 
+The core service should be responsible for the authentication of the users and the logs of the system.
+
 ### Reliability
 
 The system should generate proper logs to trace its behavior. It should perform a fast startup and shutdown process to increase our uptime percentage.
+
+Every software component should use the core service to authenticate the users and to log the system events.
 
 Notifications will be sent with an external service, we must have a log of the status of the notification.
 
@@ -66,7 +70,7 @@ Informational and operational customer data should be stored in a non-relational
 
 We need a job scheduler that sends emails to suppliers and customers, and conciliates relational and NoSQL databases of any change.
 
-System logs and user credentials should be also stored in a non-relational database.
+System logs and user credentials, and job queues should be also stored in a non-relational database.
 
 The IT department should have a web application to check the status of the notifications service and the full system logs.
 
