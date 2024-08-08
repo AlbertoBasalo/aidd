@@ -32,12 +32,12 @@ As a Database Designer you are responsible for designing the database schema bas
 
 ### 1. Entity-Relationship (E-R) Diagram
 
-Generate the E-R diagram based on the system architecture and user stories for each software component.
+Generate the E-R diagram based on the system architecture and user stories.
 
 Instructions:
 
 1. Ask for and read the general requirements, system architecture and user stories.
-2. Generate one file for each software component.
+2. Generate one file for for the whole system.
    1. Use the component name as the title for the file.
 3. For the whole system list entities and relationships.
    1. Identify entities and relationships.
@@ -91,6 +91,8 @@ Instructions:
 3. Identify subdomains and list entities under each subdomain.
    1. Group entities based on their relationships and functionalities.
    2. Some entities may belong to multiple subdomains.
+   3. Feel free to reuse entities across subdomains.
+      1. In such cases use specific subset of attributes for each subdomain.
 4. For each entity,
    1. List attributes with data types and descriptions.
    2. Specify primary and foreign keys, optional fields, and derived fields.
@@ -155,6 +157,61 @@ Example:
 ## Postgres DSL generating instructions
 
 The current instructions for generating PostgreSQL Data Definition Language (DDL) based on the provided domain model involve the following steps and guidelines:
+
+## General Guidelines
+
+1. Strictly adhere to the provided requirements. Do not add features or entities that are not explicitly specified in the requirements or system architecture documents.
+
+2. Pay close attention to the system architecture. Some data may be intended for relational databases (e.g., PostgreSQL) while other data may be meant for NoSQL databases (e.g., MongoDB).
+
+3. For MongoDB schemas:
+
+   - Utilize nested structures where appropriate to optimize data access and reduce the need for multiple queries.
+   - Consider embedding related data that is frequently accessed together.
+
+4. Do not add system or operational attributes such as `createdAt`, `updatedAt`, `createdBy`, or `updatedBy` unless explicitly required.
+
+5. When designing schemas for specific components (e.g., customer-facing API), focus only on the data necessary for that component's functionality.
+
+6. Include appropriate indexes to support efficient querying for common operations.
+
+7. For entities that appear in multiple contexts (e.g., User, Customer, Supplier), adjust the attribute set based on the specific needs of each context.
+
+8. Remember to include collections or tables needed for system operations, such as job scheduling, if specified in the requirements.
+
+## PostgreSQL Specific Instructions
+
+1. Use UUID for primary keys where possible.
+
+2. Implement appropriate constraints (CHECK constraints, foreign keys) to maintain data integrity.
+
+3. Create indexes on frequently queried columns and those used in JOIN operations.
+
+4. Use ENUM types for fields with a predefined set of values.
+
+## MongoDB Specific Instructions
+
+1. Use JSON Schema validation to enforce data structure and integrity.
+
+2. Create indexes to support common query patterns, including compound indexes where appropriate.
+
+3. Implement text indexes for fields that require full-text search capabilities.
+
+4. Use nested objects and arrays to represent complex data structures, optimizing for read operations in customer-facing applications.
+
+5. For references between collections, use consistent field names (e.g., `userId`, `launchId`) to maintain clear relationships.
+
+## Final Checks
+
+1. Ensure all required fields from the original requirements are included in the schema.
+
+2. Verify that the schema supports all the operations described in the user stories and system requirements.
+
+3. Check that the data model aligns with the specified system architecture, particularly regarding the split between relational and NoSQL databases.
+
+4. Confirm that no unnecessary fields or collections have been added that weren't part of the original requirements.
+
+5. Validate that the schema allows for efficient querying of data as needed by the various components of the system (e.g., customer web app, supplier portal, employee dashboard).
 
 ### Entity and Attribute Naming Conventions
 
