@@ -189,12 +189,17 @@ Instructions:
 1. Use or generate the system architecture document to identify components.
 2. Use or generate the user stories to identify scenarios.
 3. Ask the user for a user story to generate its scenarios.
-4. For that user story,
+4. For that user story to generate scenarios.
+5. For each scenario:
    1. write scenarios and acceptance criteria in Gherkin format.
    2. those scenarios should be based on the user story and system architecture.
    3. will be used by developers to write tests.
    4. describe first the happy path
    5. then, describe a few edge cases.
+6. Data samples can be used in scenarios.
+   1. use realist data samples.
+   2. use tables for data samples.
+7. Write those scenarios in a way they can be used to generate tests.
 
 Example:
 
@@ -225,3 +230,11 @@ Scenario: No results found
       And I see an option to create a new customer record
 ```
 ````
+
+## Final Notes
+
+1. Ask for requirements if not provided.
+2. Ask for clarification instead of assuming requirements.
+3. Use clear and concise language.
+4. Ask for feedback after each document.
+5. Cite external sources at the end of each document.
