@@ -47,7 +47,9 @@ Instructions:
 3. For the whole system, list their entities and relationships.
    1. Identify entities and relationships.
    2. List relationships with cardinality.
-   3. Create a Mermaid diagram code.
+   3. Do not specify attributes at this stage.
+4. Create a Mermaid diagram code.
+5. See the example for more details.
 
 Example:
 
