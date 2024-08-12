@@ -1,76 +1,78 @@
-Hello, my name is Bill Jobs and I am the Chief Technology Officer of Astro Bookings.
+Hello, my name is Bill Jobs, and I am the Chief Technology Officer of Astro Bookings.
 
-Here is a not exhaust list of requirements for our system.
+Here is a not exhaustive list of requirements for our system.
 
-### Development
+## Development
 
-Our technology stack is based on Node servers and Postgres and Mongo databases.
+Our technology stack is based on Node servers and `Postgres` and `Mongo` databases.
 
-Would like to have web applications made with latest Angular versions and API services with Nest.js.
+We want web applications with the latest `Angular` versions and API services with Nest.js.
 
-We use a managed git repository where we can have a trace of the evolution of the code and the history of functional evolutionary changes.
+We use a managed `git` repository to trace the code's evolution and the history of functional evolutionary changes.
 
-We want to have a model of the domain that represents the entities and their relationships; regardless of being a relational or non-relational database.
+We want to have a model of the domain that represents the entities and their relationships, regardless of whether they are relational or non-relational databases.
 
-We want to have a system diagram (in ASCII art) that shows the different deployable modules and how they communicate with each other.
+We want a system diagram (in ASCII art) showing the different deployable components and how they communicate.
 
-Write clean code with comments and documentation that can be understood by any developer.
+Write clean code with comments and documentation that any developer can understand.
 
 ### Testing
 
 The code must be supported by tests.
 
-We want to have unit tests with Jest for the business logic at front and back end.
+We want to have unit tests with `Jest` for the business logic at the front and back end.
 
-We want to have integration tests with Cypress for the API services.
+We want to have integration tests with `Cypress` for the API services.
 
-We want to have end-to-end tests with Cypress for the web applications.
+We want to have end-to-end tests with `Cypress` for the web applications.
 
-### Deployment
+## Deployment
 
-Code that passes the tests should be ready for automatic transition to production.
+The code that passes the tests should be ready for automatic transition to production.
 
 ### Scalability
 
-The system should allow being run on different concurrent processes to scale as much as the level of operations need it.
+The system should allow different concurrent processes to run on it to scale as much as the level of operations requires.
 
-Customer operations should be separated from supplier or employee operations to allow the system to scale independently.
+Customer operations should be separated from supplier or employee operations to allow the system to scale independently. The customer is the king, so it deserves the fastest solution.
 
-We want an admin API for managing the relational data in the Postgres database used by suppliers and employees portals.
+We want a simple API for accessing a MongoDB database to read the information and write the changes for the customer's web application.
 
-We want a simple API for accessing a MongoDB database where read the information and write the changes for the customers web application.
+We want an admin API to manage the relational data in the Postgres database used by suppliers and employee portals.
 
-Use also a dedicated API with a MongoDB database to store core system info like user credentials, synchronization messages, and log entries with a simple web app for IT operators to check them.
+Use a dedicated API with a MongoDB database to store core system info like user credentials, synchronization jobs, and log entries with a simple web app for IT operators to check them.
 
-Write a job scheduler that uses former data to send emails to suppliers and customers, and to conciliate relational and NoSQL databases of any change. No need to extra service, the job scheduler should be able to call the notification service and reconcile the databases.
+Write a job scheduler that calls the main API and uses the above data to send emails to vendors and customers. Reconcile the relational and NoSQL databases with the changes they receive, so that both have the same information as soon as possible
 
-### Security
+## Security
 
-Anonymous access should be allowed to visitors and bots of the customer web app. They should be able to see the launches with available seats.
+Visitors and bots of the customer web app should be allowed anonymous access. They should be able to see the launches with available seats.
 
 We need a user authentication system based on email and password.
 
-Any supplier, customer or department employee must be authenticated to access the system.
+Any supplier, customer, or department employee must be authenticated to access the system.
 
-We want the user identification information separated from the operational data of suppliers and customers.
+We want the user identification information separated from the operational data of employees, suppliers, and customers.
 
-The core service should be responsible for the authentication of the users and the logs of the system.
+The core service should be responsible for the authentication of the users and the system logs.
 
 ### Reliability
 
 The system should generate proper logs to trace its behavior. It should perform a fast startup and shutdown process to increase our uptime percentage.
 
-Every software component should use the core service to authenticate the users and to log the system events.
+## Summary
 
-Notifications will be sent with an external service, we must have a log of the status of the notification.
+Every software component should use the core service to authenticate the users and log the system events.
+
+Notifications will be sent with an external service, and we must have a log of the notification status.
 
 Operational data should be stored in a relational database.
 
-Informational and operational customer data should be stored in a non-relational database for quick use from the customers web app.
+Informational and operational customer data should be stored in a non-relational database, which customers can quickly access from their web app.
 
-We need a job scheduler that sends emails to suppliers and customers, and conciliates relational and NoSQL databases of any change.
+We need a job scheduler that emails suppliers and customers and communicates with relational and NoSQL databases regarding any change.
 
-System logs and user credentials, and job queues should be also stored in a non-relational database.
+System logs, user credentials, and job queues should also be stored in a non-relational database.
 
 The IT department should have a web application to check the status of the notifications service and the full system logs.
 
