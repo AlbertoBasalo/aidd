@@ -44,9 +44,10 @@ To do so:
    b. `domain.controller.ts`: Contains all controllers
    c. `domain.service.ts`: Contains all services
 2. In `domain.dto.ts`:
-   a. Define all DTOs needed for the API.
-   b. Use class-validator decorators for input validation.
-   c. Use PartialType for update DTOs where appropriate.
+   a. Define and export all DTOs needed for the API.
+   b. Define and export all Enums needed for those DTOs.
+   c. Use class-validator decorators for input validation.
+   d. Use PartialType for update DTOs where appropriate.
 3. In `domain.controller.ts`:
    a. Implement the API endpoints as controllers.
    b. Use appropriate decorators for HTTP methods and routes.
