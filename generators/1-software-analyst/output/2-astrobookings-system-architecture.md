@@ -103,57 +103,44 @@
 ## Summary graph
 
 ```mermaid
-graph TD
-    subgraph Web Applications
-        AuthWeb[Auth]
-        CustomerWeb[Customer]
-        SupplierWeb[Supplier]
-        FinancialWeb[Financial]
-        OperationsWeb[Operations]
-    end
-
-    subgraph API Services
-        AuthAPI[Auth]
-        CustomerAPI[Customer]
-        AdminAPI[Admin]
-        CoreAPI[Core]
-    end
-
-    subgraph Databases
-        OperationsDB[Operations Relational]
-        CustomerDB[Customer Documental]
-        CoreDB[Core Documental]
-    end
-
-    subgraph External Services
-        Notification[Notification]
-    end
-
-    subgraph Jobs
-        JobScheduler[Job Scheduler]
-    end
-
+flowchart TD
+ subgraph WebApps["Web Applications"]
+        AuthWeb["Auth"]
+        CustomerWeb["Customer"]
+        SupplierWeb["Supplier"]
+        FinancialWeb["Financial"]
+        OperationsWeb["Operations"]
+  end
+ subgraph APIServices["API Services"]
+        AuthAPI["Auth"]
+        CustomerAPI["Customer"]
+        AdminAPI["Admin"]
+        CoreAPI["Core"]
+  end
+ subgraph Databases["Databases"]
+        OperationsDB["Operations Relational"]
+        CustomerDB["Customer Documental"]
+        CoreDB["Core Documental"]
+  end
+ subgraph External["External Services"]
+        Notification["Notification"]
+  end
+ subgraph Jobs["Jobs"]
+        JobScheduler["Job Scheduler"]
+  end
     AuthWeb --> AuthAPI
-    CustomerWeb --> CustomerAPI
-    CustomerWeb --> AuthWeb
-    SupplierWeb --> AdminAPI
-    SupplierWeb --> AuthWeb
-    FinancialWeb --> AdminAPI
-    FinancialWeb --> AuthWeb
-    OperationsWeb --> CoreAPI
-    OperationsWeb --> AuthWeb
-
-    AuthAPI --> CoreDB
-    AuthAPI --> CustomerDB
-    AuthAPI --> OperationsDB
-    CustomerAPI --> CoreAPI
-    CustomerAPI --> CustomerDB
-    AdminAPI --> CoreAPI
-    AdminAPI --> OperationsDB
-    CoreAPI --> CoreDB
-    CoreAPI --> CustomerDB
-    CoreAPI --> OperationsDB
-    CoreAPI --> Notification
-    JobScheduler --> CoreAPI
-    JobScheduler --> CoreDB
+    CustomerWeb --> CustomerAPI & AuthWeb
+    SupplierWeb --> AdminAPI & AuthWeb
+    FinancialWeb --> AdminAPI & AuthWeb
+    OperationsWeb --> CoreAPI & AuthWeb
+    AuthAPI --> CoreDB & CustomerDB & OperationsDB
+    CustomerAPI --> CoreAPI & CustomerDB
+    AdminAPI --> CoreAPI & OperationsDB
+    CoreAPI --> CoreDB & CustomerDB & OperationsDB & Notification
+    JobScheduler --> CoreAPI & CoreDB
+    style WebApps fill:#FFFFFF,stroke:#D50000
+    style APIServices fill:#FFFFFF,stroke:#00C853
+    style Databases fill:#FFFFFF,stroke:#FFD600
+    style External fill:#FFFFFF,stroke:#AA00FF
+    style Jobs fill:#FFFFFF,stroke:#AAAAAA
 ```
