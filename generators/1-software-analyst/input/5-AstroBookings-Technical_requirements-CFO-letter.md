@@ -10,7 +10,7 @@ We want web applications with the latest `Angular` versions and API services wit
 
 We want to have a model of the domain that represents the entities and their relationships, regardless of whether they are relational or non-relational databases.
 
-We want a system diagram (in ASCII art) showing the different deployable components and how they communicate.
+We want a system diagram (in mermaid syntax) showing the different deployable components and how they communicate.
 
 Write clean code with comments and documentation that any developer can understand.
 
@@ -30,49 +30,35 @@ The code that passes the tests should be ready for automatic transition to produ
 
 ### Scalability
 
-The system should allow different concurrent processes to run on it to scale as much as the level of operations requires. So we need several applications, and API services that can be scaled independently.
+The system must allow different concurrent processes to run to scale as much as the level of operations requires. In addition, there will be several development teams in parallel. Therefore, we need multiple applications and API services that can be deployed independently.
 
-Customer operations should be separated from supplier or employee operations to allow the system to scale independently. The customer is the king, so it deserves the fastest solution. We want a simple API for accessing a MongoDB database to read the information and write the changes for the customer's web application.
+There will be a single relational database, with all the relevant information for offer, reservation and invoicing operations.
 
-We want an admin API to manage the relational data in the Postgres database used by suppliers and financial employee portals.
+The data for the sales service and application must also be stored in MongoDB, so that it is very fast to read offers and write reservations.
 
-Use a dedicated API with a MongoDB database to store core system info like user credentials, synchronization jobs, and log entries with a simple web app for IT operators to check them.
-
-Write a job scheduler that calls the main API and uses the above data to send emails to vendors and customers. Reconcile the relational and NoSQL databases with the changes they receive, so that both have the same information as soon as possible
+We need a work queue system where services note changes that need to be synchronized between both databases.
 
 ## Security
 
-Visitors and bots of the customer web app should be allowed anonymous access. They should be able to see the launches with available seats.
+Visitors and bots of the selling web app should be allowed anonymous access. They must be able to see the launches with available seats.
 
-We need a user authentication system based on email and password. It will be used by suppliers, customers, and employees apps and services
+We need a user authentication system based on email and password. It will be used by agencies, travelers, and employees apps and services.
 
-Any supplier, customer, or department employee must be authenticated to access the system.
-
-We want the user identification information separated from the operational data of employees, suppliers, and customers.
+We want that system completely separated from the operational one. So we want a web app, an API service just for user authentication.
 
 The Auth app should be responsible for registering and validating the users' credentials.
 
 The auth service should be responsible validation and persistence of the user credentials.
 
-For new users, it will also be responsible for storing a copy of the user basic information on operational and informational databases.
+Data should be sabed in a documental database called core.
+
+Any agency, traveler, or employee must be able to log in to the system with their email and password and have its profile information stored in the main relational database.
 
 ### Reliability
 
-The system should generate proper logs to trace its behavior. It should perform a fast startup and shutdown process to increase our uptime percentage.
+The system should generate proper logs to trace its behavior. For security and speed reasons, we want to store the logs in the Core MongoDB database.
 
-## Summary
-
-Every software component should use the core service to authenticate the users and log the system events.
-
-Notifications will be sent with an external service, and we must have a log of the notification status.
-
-Operational data should be stored in a relational database.
-
-Informational and operational customer data should be stored in a non-relational database, which customers can quickly access from their web app.
-
-We need a job scheduler that call a service to send emails for suppliers and customers and to communicate with relational and NoSQL databases regarding any change.
-
-System logs, user credentials, and job queues should also be stored in a non-relational database.
+The system should call a notification service that sends emails to travelers and agencies when they book or cancel a reservation.
 
 The IT department should have a web application to check the status of the notifications service and the full system logs.
 

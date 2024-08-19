@@ -2,13 +2,13 @@ Hi there, this is Guy Godin the leader of Astro Bookings in the kingdom of digit
 
 We are thrilled to tell you about our marketing strategy. And the role we want your solution to play.
 
-We need a **landing page** where we can showcase the next rocket launches with seats available so customers can book reservations in a _first-come, first-served_ way.
+We need a **landing page** where we can showcase the next rocket launches with seats available so travelers can book reservations in a _first-come, first-served_ way.
 
-Customers can book up to four seats in any launch, but VIPs, who are customers that have already booked two trips with us, can book two more. We need a system to identify these VIPs.
+Travelers can book up to four seats in any launch, but VIPs, who are travelers that have already booked two trips with us, can book two more.
 
-When any supplier schedules a new launch, we want to **inform our VIP customers by email**, giving them a link to the launch booking web page where they can reserve their trips. The link must be human-readable and SEO-friendly, including the rocket, spaceport, destination, and the date of the launch.
+When any supplier schedules a new launch, we want to **inform our VIP travelers by email**, giving them a link to the launch booking web page where they can reserve their trips. The link must be human-readable and SEO-friendly, including the rocket, spaceport, destination, and the date of the launch.
 
-Customers can **cancel** their bookings and will be refunded a portion of their money if they do so well in advance.
+Travelers can **cancel** their bookings and will be refunded a portion of their money by the agency, if they do so well in advance.
 
 Additionally, we are looking for a website that is not only SEO-friendly but also user-friendly and as fast as a rocket, to ensure a seamless customer experience.
 
