@@ -113,47 +113,7 @@ Para ello, sigue estas instrucciones:
 
 15. Evita asumir requisitos. Si hay ambigüedad, pide aclaraciones al usuario.
 
-Ejemplo:
-
-```markdown
-# System Name: Domains Overview
-
-## Domains
-
-1. `Authentication`: Manages user registration and login.
-2. `Another Domain`: Describes another domain.
-
-3. `Monitoring`: Provides system monitoring and logging.
-
-## Roles
-
-- `Role1`: Description of Role1.
-- `Role2`: Description of Role2.
-
-## Domains and User Stories
-
-### 1. Authentication
-
-- As a `visitor` I want to **register an account** so that _I can access the system_.
-
----
-
-## 1. Authentication
-
-Supports user registration and login. Provides access control to all system resources.
-
-### 1.1 As a Visitor, I want to register an account, so that I can access the system.
-
-- Identificación mediante correo electrónico único.
-- La contraseña se almacenará encriptada.
-- Se solicitará un nombre para mostrar y un rol.
-
-### 1.2 Another User Story
-
----
-
-## 2. Another Domain
-```
+Ejemplo: mira el archivo `sample.domain.md`.
 
 ### 2. Arquitectura de sistemas
 
@@ -176,85 +136,7 @@ Para ello, sigue estas instrucciones:
    3. relaciona las interfaces con otros componentes o roles.
 5. Añade un diagrama Mermaid de las interfaces entre componentes y roles.
 
-Ejemplo:
-
-````markdown
-# Project: System Architecture
-
-> timestamp
-
-## System Components
-
-- 🧑‍💻 WebApplication1
-- 🧑‍💼 ApiService1
-- 📇 SqlDatabase1
-- 👽 RemoteApi
-
-## WebApplications
-
-### 🧑‍💻 WebApplication1
-
-- 📋 UI for managing customer data and orders.
-- 🧑‍💻 **Angular, TypeScript, HTML, CSS**
-- ⬇️ Consumes `🧑‍💼 ApiService1`
-- ⬆️ Provides for `🙋‍♂️ Role1`
-
-## Business Services
-
-### 🧑‍💼 ApiService1
-
-- 📋 Handles business logic and data processing.
-- 🧑‍💻 **Node.js, Express, TypeScript**
-- ⬇️ Consumes `📇 SQL Database`, `👽 NotificationsApi`
-- ⬆️ Provides for `🧑‍💻 WebApplication1`
-
-## Databases
-
-### 📇 SqlDatabase1
-
-- 📋 Stores customer, order, and product data.
-- 🧑‍💻 **PostgreSQL**
-- ⬆️ Provides for `🧑‍💼 ApiService1`
-
-## External Services
-
-### 👽 NotificationsApi
-
-- 📋 Processes payments for orders.
-- ⬆️ Provides for `🧑‍💼 ApiService1`
-
-## System Architecture Diagram
-
-```mermaid
-flowchart TD
- subgraph 🧑‍💻WebApps["🧑‍💻 Web Applications"]
-        🧑‍💻WebApplication1["🧑‍💻 Web Application 1"]
-        🧑‍💻WebApplication2["🧑‍💻 Web Application 2"]
-  end
-  subgraph 🧑‍💼APIServices["🧑‍💼 API Services"]
-          🧑‍💼ApiService1["🧑‍💼 ApiService 1"]
-  end
-  subgraph 📇Databases["📇 Databases"]
-          📇SqlDatabase1["📇 Sql Database 1"]
-  end
-  subgraph 👽External["👽 External"]
-          👽RemoteApi["👽 Remote Api"]
-  end
-  subgraph 🤖Jobs["🤖 Jobs"]
-          🤖JobScheduler["🤖 Job Scheduler"]
-  end
-  🧑‍💻WebApplication1 --> 🧑‍💼ApiService1
-  🧑‍💼ApiService1 --> 📇SqlDatabase1
-  🧑‍💼ApiService1 --> 🤖JobScheduler
-  🤖JobScheduler --> 📇SqlDatabase1
-  🤖JobScheduler --> 👽RemoteApi
-    style 🧑‍💻WebApps fill:#FFFFFF,stroke:#D50000
-    style 🧑‍💼APIServices fill:#FFFFFF,stroke:#00C853
-    style 📇Databases fill:#FFFFFF,stroke:#FFD600
-    style 👽External fill:#FFFFFF,stroke:#AA00FF
-    style 🤖Jobs fill:#FFFFFF,stroke:#AAAAAA
-```
-````
+Ejemplo: mira el archivo `sample.system.md`.
 
 ### 3. Modelo de Entidad-Relación (ERD)
 
@@ -271,43 +153,11 @@ Para ello, sigue estas instrucciones:
 4. Lista las relaciones entre las entidades.
    1. No especifiques atributos en esta etapa; solo entidades y relaciones.
    2. Se preciso con las cardinalidades.
-5. Agrega un diagrama Mermaid.
+5. Muéstreselo al usuario y pide confirmación antes de continuar.
+   1. Cuando esté listo, continúa generando el diagrama Mermaid.
+6. Agrega un diagrama Mermaid.
 
-Ejemplo:
-
-````markdown
-# Project: Entity-Relationship Diagram
-
-> timestamp
-
-## Entities
-
-1. `Customer`: A customer who can place orders.
-2. `Order`: An order placed by a customer.
-3. `Product`: A product that can be ordered.
-4. `User`: A user who can log in to the system.
-
-## Relationships
-
-1. Customer _(1 to 0 or many)_ Order
-   - `Customer` _places_ `Order`
-   - `Order` _belongs to_ `Customer`
-2. Order _(1 to 1 or many)_ Product
-   - `Order` _contains_ `Product`
-   - `Product` _is part of_ `Order`
-3. User _(1 to 0 or 1)_ Customer
-   - `User` _can be a_ `Customer`
-   - `Customer` _is a_ `User`
-
-## Mermaid Diagram Code
-
-```mermaid
-erDiagram
-  Customer ||--o{ Order : places
-  Order ||--|{ Product : contains
-  User ||--o| Customer : can be
-```
-````
+Ejemplo: mira el archivo `sample.erd.md`.
 
 ## Final Notes
 
