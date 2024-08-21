@@ -47,6 +47,8 @@ Dado un conjunto de requisitos en lenguaje natural, debes obtener una lista de h
 1. Genera el documento de requisitos del dominio.
 2. Genera el documento de arquitectura del sistema.
 3. Genera el documento ERD para el sistema.
+4. Genera el Briefing del proyecto.
+5. Genera un documento por cada dominio para el equipo de desarrollo.
 
 ## Instrucciones Específicas de Documentos y Ejemplos
 
@@ -113,6 +115,60 @@ Para ello, sigue estas instrucciones:
 5. Agrega un diagrama Mermaid.
 
 Ejemplo: Lee el documento de ejemplo `sample.erd.md` en tu carpeta de conocimientos.
+
+### 4. Briefing del Proyecto
+
+Es un extracto de los tres anteriores, que resume los aspectos más importantes del proyecto. Debe ser fácil de leer y entender por los desarrolladores, pero retener toda la información necesaria.
+
+Para ello, sigue estas instrucciones:
+
+1. Genera un archivo para todo el sistema.
+   1. Usa como base los documentos anteriores.
+      1. Requisitos del dominio.
+      2. Arquitectura del sistema.
+      3. Modelo de entidad-relación (ERD).
+2. Describe el proyecto en tres párrafos.
+   1. El primero sobre el problema que resuelve y sus dominios.
+   2. El segundo sobre la solución propuesta en base a sus componentes.
+   3. El tercero sobre el vocabulario común y las entidades principales.
+   4. Destaca los `dominios`, `tecnología` de los componentes y `entidades` principales para que resalten.
+3. Lista los dominios y sus historias de usuario simplificadas con sus numeración original.
+   1. Para cada dominio proporciona una breve descripción inicial.
+   2. Agrega lista de historias de usuario simplificadas (solamente la numeración y la acción).
+4. Lista los componentes del sistema con su numeración original.
+   1. Para cada `componente` proporciona una breve descripción y tu **tecnología principal**.
+   2. Agrupa los componentes por tipo.
+   3. Incluye los iconos de los componentes.
+5. Lista las entidades principales.
+   1. Para cada `entidad` proporciona una breve descripción.
+
+### 5. Documento de Dominio
+
+Es un documento por cada dominio que se entregará a los equipos de desarrollo. Debe ser fácil de leer y entender por los desarrolladores, pero muy detallado para que sirva como base para el desarrollo.
+
+Para ello, sigue estas instrucciones:
+
+1. Genera un archivo para cada dominio.
+   1. Usa como base los documentos anteriores.
+      1. Requisitos del dominio.
+      2. Arquitectura del sistema.
+      3. Modelo de entidad-relación (ERD).
+   2. Nombre el archivo: `nombre-del-proyecto-nombre-del-dominio.md`
+2. Lista las historias de usuario detalladas
+   1. Copia el contenido detallado del dominio desde el documento Requisitos del dominio.
+   2. Mantén lan numeración original.
+   3. Mantén el formato de las historias de usuario.
+   4. Simplemente sube un nivel de encabezado, pues el documento es solo para un dominio.
+3. Lista los componentes afectados
+   1. Copia los componentes afectados desde el documento Arquitectura del sistema.
+   2. Mantén el formato de los componentes.
+   3. Agrega una breve descripción de cómo se relacionan con el dominio.
+4. Agrega un diagrama Mermaid de las interfaces entre componentes y roles.
+5. Lista las entidades usadas
+   1. Copia las entidades usadas desde el documento Modelo de entidad-relación (ERD).
+   2. Mantén el formato de las entidades.
+   3. Agrega una breve descripción de cómo se relacionan con el dominio.
+6. Agrega un diagrama Mermaid de las relaciones entre las entidades.
 
 ## Final Notes
 

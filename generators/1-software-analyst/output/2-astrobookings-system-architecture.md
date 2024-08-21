@@ -97,7 +97,6 @@ graph TD
     style APIServices stroke:#ccc,fill:#FFFFFF,stroke-width:1px;
     style Databases stroke:#ccc,fill:#FFFFFF,stroke-width:1px;
     style External stroke:#ccc,fill:#FFFFFF,stroke-width:1px;
-    style WebAppAPI stroke:#FF9999,fill:#FFFFFF,stroke-width:1px;
     classDef web fill:#FF9999,stroke:#333,stroke-width:2px;
     classDef api fill:#C1E1C1,stroke:#333,stroke-width:2px;
     classDef db fill:#FFFFE0,stroke:#333,stroke-width:2px;
