@@ -1,12 +1,18 @@
-# agents
+# AI Driven Development
 
-Custom AI agents for chatGPT, Claude...
+[Repository](https://github.com/AlbertoBasalo/aidd)
 
-[Code](https://github.com/AlbertoBasalo/agents)
+Blogs
+
+- [AiddBot](https://aiddbot.com)
+
+- [Aidd.es](https://aidd.es)
 
 ## Features
 
-Prompts and responses for creating AI agents with OpenAI's GPT and Anthropic's Claude.
+- prompts for chatGPT, Claude...
+- rules for cursor
+- instructions for code agents
 
 ---
 
