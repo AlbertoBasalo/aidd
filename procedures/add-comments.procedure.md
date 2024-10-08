@@ -28,35 +28,117 @@ To add comments to this code, follow these steps:
 
 ### Classes
 
-- Use JSDoc comments for the class
+- Use **JSDoc** comments for the class
 - Explain the purpose of the class
-- Use @requires for dependencies taken from constructor
-- Use @extends or @implements for parent classes or interfaces
+- Use `@requires` for dependencies taken from constructor
+- Use `@extends` or `@implements` for parent classes or interfaces
 
 ### Public methods or functions
 
-- Use JSDoc comments for the method or function
+- Use **JSDoc** comments for the method or function
 - Explain the purpose of the method or function
-- Use @param for params
-- Use @returns for return values
-- Use @throws for exceptions
+- Use `@param` for params
+- Use `@returns` for return values
+- Use `@throws` for exceptions
 
 ### Private methods or functions
 
-- Do not add external JSDoc comments to private functions or methods
+- Do not add external **JSDoc** comments to private functions or methods
 
 ### DTOs, types, interfaces
 
 - Explain the purpose of the DTO, type or interface
-- Use @example to add examples to the properties
+- Use `@example` to add examples to the properties
 
-### Complex logic
+> Examples:
 
-- Use simple comments (no JSDoc) to explain the purpose of the complex logic
+```typescript
+/**
+ * Transaction type
+ */
+type Transaction = {
+  /**
+   * The amount of the transaction
+   * @example 100
+   */
+  amount: number;
+  /**
+   * The type of the transaction
+   * @example 'payment'
+   */
+  type: "payment" | "refund";
+};
+
+/**
+ * Transactions class
+ */
+class Transactions {
+  #transactions: Transaction[] = [];
+  #balance: number = 0;
+
+  /**
+   * The balance of the transactions
+   */
+  get balance(): number {
+    return this.#balance;
+  }
+
+  /**
+   * Payment transaction
+   * @param payment - The payment to pay
+   * @returns The payment paid
+   */
+  pay(payment: Transaction): Transaction {
+    this.#transactions.push(payment);
+    this.#setBalance(payment);
+    return payment;
+  }
+
+  /**
+   * Refund transaction
+   * @param refund - The refund to refund
+   * @returns The refund refunded
+   */
+  refund(refund: Transaction): Transaction {
+    this.#transactions.push(refund);
+    this.#setBalance(refund);
+    return refund;
+  }
+
+  #setBalance(transaction: Transaction): void {
+    if (transaction.type === "payment") {
+      this.balance += transaction.amount;
+    } else {
+      this.balance -= transaction.amount;
+    }
+  }
+}
+```
+
+### Simple comments for complex logic
+
+- Use simple lines comments to explain the purpose of the complex logic
 - Explain how complex algorithms or logic work
 - The meaning of important variables or data structures
 - Any potential edge cases or error handling
 - Encourage refactoring to improve readability
+
+> Examples:
+
+```typescript
+/**
+ * Calculates the factorial of a number
+ * @param n - The number to calculate the factorial of
+ * @returns The factorial of the number
+ * @throws Will throw an error if the number is negative
+ */
+function factorial(n: number): number {
+  if (n < 0) throw new Error("Factorial is not defined for negative numbers");
+  if (n === 0) return 1;
+  // recursive call to calculate the factorial
+  return n * factorial(n - 1);
+}
+```
 
 ## Remarks:
 
